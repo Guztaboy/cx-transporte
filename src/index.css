@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #FFD700;
+  --color-brandDark: #E6C200;
+  --color-darkBg: #0f172a;
+  --color-darkerBg: #020617;
+  --font-sans: "Inter", "sans-serif";
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-darkerBg);
+  color: #f1f5f9;
+  font-family: var(--font-sans);
+}
+
+/* Hide scrollbar but keep functionality */
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ---- Each fullpage section ---- */
+.fp-section {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .fp-section {
+    min-height: 100dvh;
+    height: auto;
+    padding-top: 120px;
+    padding-bottom: 80px;
+  }
+}
+
+/* ---- Parallax layer utility ---- */
+.parallax-layer {
+  will-change: transform;
+}
+
+
+/* ---- Glow pulse animation ---- */
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(1.05); }
+}
+.animate-glow-pulse {
+  animation: glow-pulse 4s ease-in-out infinite;
+}
